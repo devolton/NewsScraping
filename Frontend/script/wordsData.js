@@ -1,7 +1,6 @@
 var wordsCollection =
-    {
         //читать данные с файла и автоматически их сортировать в порядке возростания
-        data: [
+   [
             {word: 'Hello', count: 190},
             {word: 'World', count: 216},
             {word: 'Sobaka', count: 232},
@@ -23,5 +22,4 @@ var wordsCollection =
             {word: 'Zelenskiy', count: 400},
             {word: 'Bidon', count: 1900}
 
-        ]
-    };
+        ];

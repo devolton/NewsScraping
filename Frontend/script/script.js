@@ -17,7 +17,7 @@ window.addEventListener('load', () => {
     var ctx = canvas.getContext('2d');
     var loc_X = 50;
     var loc_Y = canvas.clientHeight - loc_X * 2;
-    var wordsContainer = wordsCollection.data;
+    var wordsContainer = wordsCollection.slice();
     var scheduleBlockHeight = canvas.clientHeight - loc_X * 3;
     var step = 20;
     var lastCount;
@@ -36,7 +36,7 @@ window.addEventListener('load', () => {
         ctx.font = ' bold 18px serif';
         ctx.fillText("0", loc_X - 25, loc_Y + 15);
     };
-    var drawGraph = (wordsCollection,countBorder) => {
+    var drawGraph = (wordsCollection) => {
         wordsCollection.forEach((oneWordData, index) => {
             var maxCount = wordsCollection.reduce((maxItem, current) => (current.count > maxItem.count ? current : maxItem), wordsCollection[0]).count;
             var blockHeight = scheduleBlockHeight * oneWordData.count / maxCount;
@@ -87,12 +87,16 @@ window.addEventListener('load', () => {
     drawArrows();
     drawGraph(wordsContainer);
     newsCountSelect.addEventListener('change', () => {
-        let topCountNumber = newsCountSelect.value;
-        wordsContainer=wordsCollection.data;
-        wordsContainer.length=topCountNumber;
+        let startIndex =wordsCollection.length- newsCountSelect.value;
+        wordsContainer.length=0;
+        console.log("Start index:"+startIndex);
+        console.log("Main container length: "+wordsCollection.length);
+        for(let i=startIndex;i<wordsCollection.length;i++){
+            wordsContainer.push(wordsCollection[i]);
+        }
         ctx.clearRect(0, 0, canvas.width, canvas.height);
         drawArrows();
-        drawGraph(wordsContainer,topCountNumber);
+        drawGraph(wordsContainer);
 
     });
 
