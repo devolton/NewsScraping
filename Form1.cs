@@ -16,9 +16,9 @@ namespace NewsScraping
 
         private void button1_Click(object sender, EventArgs e)
         {
-            var svs = new NewsScraper("https://pressgazette.co.uk/");
+            var newsScraper = new NewsScraper("https://pressgazette.co.uk/");
 
-            svs.Click();
+            newsScraper.GetHeadText();
         }
     }
 }

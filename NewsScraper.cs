@@ -11,33 +11,13 @@ namespace NewsScraping
             driver.Url = url;
         }
 
-        //bool ElementExists(IWebDriver driver, By by)
-        //{
-        //    try
-        //    {
-        //        driver.FindElement(by);
-        //        return true;
-        //    }
-        //    catch (Exception)
-        //    {
-        //        return false;
-        //    }
-        //}
-        public void Click()
+        public void GetHeadText()
         {
             IWebElement cokiesButton = driver.FindElement(By.Id("onetrust-accept-btn-handler"));
             driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(5);
             cokiesButton.Click();
 
-            ////IWebElement bannerButton = driver.FindElement(By.Id("ranson-NoButtonElement--eVVZJF98jnguyTLl2tsf"));
-            ////driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(5);
-            ////bannerButton.Click();
-
-            //IWebElement nextButton = driver.FindElement(By.Id("load-more-archives"));
-            //while (ElementExists(driver, By.Id("load-more-archives")))
-            //{
-            //    nextButton.Click();
-            //}
+            
 
             IWebElement[] header = driver.FindElements(By.ClassName("c-story__header__headline")).ToArray();
 
