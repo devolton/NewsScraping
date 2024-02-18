@@ -1,5 +1,5 @@
 let wordsCollection = [];
-let jsonResponse = {"Beta":12,"Heiis":67,"Hello":10,"Hololo":23,"Name":4,"OpenGamer":54,"World":2};
+let jsonResponse = {"First":100,"Heiis":67,"OpenGamer":54,"Hololo":23,"Beta":12};
 for (let jsonResponseKey in jsonResponse) {
     wordsCollection.push({word: jsonResponseKey, count: jsonResponse[jsonResponseKey]});
 };
