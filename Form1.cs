@@ -11,6 +11,8 @@ namespace NewsScraping
 
         private void Form1_Load(object sender, EventArgs e)
         {
+            var temp = new Temp();
+            temp.WriteDictionary();
             
         }
 
