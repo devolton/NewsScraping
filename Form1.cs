@@ -19,7 +19,7 @@ namespace NewsScraping
         private void button1_Click(object sender, EventArgs e)
         {
             var newsScraper = new NewsScraper("https://pressgazette.co.uk/");
-
+            newsScraper.SkipCookies();
             newsScraper.PrintTop10Words();
         }
     }

@@ -76,6 +76,13 @@ namespace NewsScraping
                 rank++;
             }
         }
+
+        public void SkipCookies()
+        {
+            IWebElement cokiesButton = driver.FindElement(By.Id("onetrust-accept-btn-handler"));
+            driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(5);
+            cokiesButton.Click();
+        }
     }
 }
 
