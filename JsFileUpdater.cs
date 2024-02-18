@@ -17,17 +17,19 @@ public class JsFileUpdater
     {
         _collection = collection;
         _filePath = "../../../Frontend/script/wordsData.js";
-        _wordsCount = 5;
+        _wordsCount = 20;
     }
-    private void SortAndTrimDictionary() => _collection = _collection.OrderByDescending(pair => pair.Value).Take(_wordsCount).ToDictionary(pair => pair.Key, pair => pair.Value);
+    private void SortAndTrimDictionary() => _collection = _collection.OrderByDescending(pair => pair.Value).Take(_wordsCount).Reverse().ToDictionary(pair => pair.Key, pair => pair.Value);
     private string ReadJsFile()
     {
         using var sr = new StreamReader(_filePath);
         return sr.ReadToEnd();
     }
+  
     private string UpdateFile(string oldContent)
     {
         SortAndTrimDictionary();
+    
         var jsonCollectoin = JsonSerializer.Serialize<Dictionary<string, int>>(_collection);
         var sb = new StringBuilder(oldContent);
         if (oldContent.Contains('%'))
