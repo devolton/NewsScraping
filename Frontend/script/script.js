@@ -51,11 +51,11 @@ window.addEventListener('load', () => {
             var wordNameLineXCoordinate=step + loc_X + index * (widthB + step) + widthB / 2;
             var wordCountLineYCoordinate=scheduleBlockHeight - blockHeight + loc_X;
             ctx.beginPath();
-            ctx.fillStyle = `rgb(${255 - index * 255 / wordsCollection.length},${index * 255 / wordsCollection.length},0)`;
+            ctx.fillStyle = `rgb(${255 - index * 255 / wordsCollection.length},${index * 255 / wordsCollection.length},150)`;
             ctx.fillRect(rectXCoordinate, loc_Y, widthB, -blockHeight);
             ctx.fill();
             ctx.fillStyle = 'black';
-            ctx.font=(wordsCollection.length>=6)? '14px serif' : '20px serif';
+            ctx.font=(wordsCollection.length>=6)? '18px serif' : '22px serif';
             ctx.moveTo(wordNameLineXCoordinate, loc_Y);
             ctx.lineTo(wordNameLineXCoordinate, loc_Y + 5);
             ctx.stroke();
@@ -67,7 +67,7 @@ window.addEventListener('load', () => {
             ctx.fillText(oneWordData.count, wordCountXCoordinate, wordCountYCoordinate);
             ctx.rotate(-Math.PI / 2);
             ctx.closePath();
-            if (Math.abs(oneWordData.count - lastCount) > 120 || index === 0) {
+            if (Math.abs(oneWordData.count - lastCount) > 5 || index === 0) {
                 ctx.beginPath();
                 ctx.moveTo(loc_X,wordCountLineYCoordinate );
                 ctx.lineTo(loc_X - 5, wordCountLineYCoordinate);
@@ -76,7 +76,7 @@ window.addEventListener('load', () => {
                 ctx.strokeStyle = 'black';
                 ctx.font = ' bold 18px serif';
                 ctx.fillStyle = 'black';
-                ctx.fillText(oneWordData.count, 5, canvas.clientHeight - 95 - blockHeight, 150);
+                ctx.fillText((oneWordData.count>10)?oneWordData.count:" "+oneWordData.count, 5, canvas.clientHeight - 95 - blockHeight, 150);
                 ctx.closePath();
                 lastCount = oneWordData.count;
             }
