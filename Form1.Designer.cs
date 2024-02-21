@@ -28,20 +28,20 @@
         /// </summary>
         private void InitializeComponent()
         {
-            button1 = new Button();
+            runButton = new Button();
             label1 = new Label();
             SuspendLayout();
             // 
-            // button1
+            // runButton
             // 
-            button1.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            button1.Location = new Point(154, 75);
-            button1.Name = "button1";
-            button1.Size = new Size(113, 49);
-            button1.TabIndex = 0;
-            button1.Text = "Click";
-            button1.UseVisualStyleBackColor = true;
-            button1.Click += button1_Click;
+            runButton.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            runButton.Location = new Point(154, 75);
+            runButton.Name = "runButton";
+            runButton.Size = new Size(113, 49);
+            runButton.TabIndex = 0;
+            runButton.Text = "Click";
+            runButton.UseVisualStyleBackColor = true;
+            runButton.Click += runButton_Click;
             // 
             // label1
             // 
@@ -60,20 +60,19 @@
             BackColor = Color.PaleTurquoise;
             ClientSize = new Size(435, 227);
             Controls.Add(label1);
-            Controls.Add(button1);
+            Controls.Add(runButton);
             Font = new Font("Microsoft Sans Serif", 8.25F, FontStyle.Regular, GraphicsUnit.Point);
             MaximizeBox = false;
             Name = "Form1";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "News Scraping";
-            Load += Form1_Load;
             ResumeLayout(false);
             PerformLayout();
         }
 
         #endregion
 
-        private Button button1;
+        private Button runButton;
         private Label label1;
     }
 }

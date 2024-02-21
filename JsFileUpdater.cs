@@ -8,17 +8,18 @@ using System.Threading.Tasks;
 namespace NewsScraping;
 public class JsFileUpdater
 {
-
+    private static JsFileUpdater _instance;
     private Dictionary<string, int> _collection;
     private readonly string _filePath;
     private readonly int _wordsCount;
 
-    public JsFileUpdater(Dictionary<string, int> collection)
+    private JsFileUpdater(Dictionary<string, int> collection)
     {
         _collection = collection;
         _filePath = "../../../Frontend/script/wordsData.js";
         _wordsCount = 20;
     }
+    public static JsFileUpdater Instance(Dictionary<string,int> collection) => _instance??=new JsFileUpdater(collection);
     private void SortAndTrimDictionary() => _collection = _collection.OrderByDescending(pair => pair.Value).Take(_wordsCount).Reverse().ToDictionary(pair => pair.Key, pair => pair.Value);
     private string ReadJsFile()
     {
@@ -53,7 +54,6 @@ public class JsFileUpdater
         var oldFileContent = ReadJsFile();
         var updateFileContent = UpdateFile(oldFileContent);
         WriteJsFile(updateFileContent);
-        MessageBox.Show("Update js file!");
     }
 
 }
