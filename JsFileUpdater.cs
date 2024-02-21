@@ -53,6 +53,7 @@ public class JsFileUpdater
         var oldFileContent = ReadJsFile();
         var updateFileContent = UpdateFile(oldFileContent);
         WriteJsFile(updateFileContent);
+        MessageBox.Show("Update js file!");
     }
 
 }

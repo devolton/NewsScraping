@@ -46,23 +46,25 @@
             // label1
             // 
             label1.AutoSize = true;
-            label1.Font = new Font("XeniaC", 24F, FontStyle.Bold, GraphicsUnit.Point);
+            label1.Font = new Font("Microsoft Sans Serif", 24F, FontStyle.Bold, GraphicsUnit.Point);
             label1.Location = new Point(104, 8);
             label1.Name = "label1";
-            label1.Size = new Size(275, 39);
+            label1.Size = new Size(302, 46);
             label1.TabIndex = 1;
             label1.Text = "News Scraping";
             // 
             // Form1
             // 
-            AutoScaleDimensions = new SizeF(6F, 13F);
+            AutoScaleDimensions = new SizeF(8F, 17F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.PaleTurquoise;
             ClientSize = new Size(435, 227);
             Controls.Add(label1);
             Controls.Add(button1);
             Font = new Font("Microsoft Sans Serif", 8.25F, FontStyle.Regular, GraphicsUnit.Point);
+            MaximizeBox = false;
             Name = "Form1";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "News Scraping";
             Load += Form1_Load;
             ResumeLayout(false);

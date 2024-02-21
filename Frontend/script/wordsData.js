@@ -1,5 +1,5 @@
 let wordsCollection = [];
-let jsonResponse = {"Hello":2,"World":3,"Guuu":4,"Mortal":9,"Gogog":10,"Morta":12,"Salo":12,"yyyy":19,"Hell":21,"Holoo":22,"Worl":31,"Tao":33,"Gogg":45,"Guu":54,"Hololo":65,"Uppo":67,"Upopo":77,"Sal":85,"Tako":99,"Dictionay":111};
+let jsonResponse = {"covid":7,"prince":7,"libel":8,"says":8,"guardian":8,"\u2013":8,"journalists":9,"harry":9,"revenue":9,"year":9,"mirror":10,"uk":10,"mail":10,"bbc":11,"telegraph":12,"over":13,"new":14,"media":18,"diary":19,"news":46};
 for (let jsonResponseKey in jsonResponse) {
     wordsCollection.push({word: jsonResponseKey, count: jsonResponse[jsonResponseKey]});
 };
