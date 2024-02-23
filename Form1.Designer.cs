@@ -30,35 +30,52 @@
         {
             runButton = new Button();
             label1 = new Label();
+            pictureBox1 = new PictureBox();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
             // 
             // runButton
             // 
-            runButton.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            runButton.Location = new Point(154, 75);
+            runButton.BackColor = Color.Aquamarine;
+            runButton.FlatAppearance.BorderSize = 0;
+            runButton.FlatStyle = FlatStyle.Flat;
+            runButton.Font = new Font("Hotel De Paris", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            runButton.Location = new Point(141, 131);
             runButton.Name = "runButton";
-            runButton.Size = new Size(113, 49);
+            runButton.Size = new Size(170, 49);
             runButton.TabIndex = 0;
-            runButton.Text = "Click";
-            runButton.UseVisualStyleBackColor = true;
+            runButton.Text = "Go Scraping News";
+            runButton.UseVisualStyleBackColor = false;
             runButton.Click += runButton_Click;
             // 
             // label1
             // 
             label1.AutoSize = true;
             label1.Font = new Font("Microsoft Sans Serif", 24F, FontStyle.Bold, GraphicsUnit.Point);
-            label1.Location = new Point(104, 8);
+            label1.Location = new Point(110, 91);
             label1.Name = "label1";
-            label1.Size = new Size(302, 46);
+            label1.Size = new Size(246, 37);
             label1.TabIndex = 1;
             label1.Text = "News Scraping";
+            label1.Click += label1_Click;
+            // 
+            // pictureBox1
+            // 
+            pictureBox1.Image = Properties.Resources.logo;
+            pictureBox1.Location = new Point(169, 2);
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.Size = new Size(111, 86);
+            pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureBox1.TabIndex = 2;
+            pictureBox1.TabStop = false;
             // 
             // Form1
             // 
-            AutoScaleDimensions = new SizeF(8F, 17F);
+            AutoScaleDimensions = new SizeF(6F, 13F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.PaleTurquoise;
             ClientSize = new Size(435, 227);
+            Controls.Add(pictureBox1);
             Controls.Add(label1);
             Controls.Add(runButton);
             Font = new Font("Microsoft Sans Serif", 8.25F, FontStyle.Regular, GraphicsUnit.Point);
@@ -66,6 +83,7 @@
             Name = "Form1";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "News Scraping";
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -74,5 +92,6 @@
 
         private Button runButton;
         private Label label1;
+        private PictureBox pictureBox1;
     }
 }

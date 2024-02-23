@@ -4,11 +4,11 @@ namespace NewsScraping
 {
     public partial class Form1 : Form
     {
-        
+
         public Form1()
         {
             InitializeComponent();
-       
+
         }
 
 
@@ -20,6 +20,11 @@ namespace NewsScraping
             var wordsCollection = newsScraper.GetWordsDictionary();
             JsFileUpdater.Instance(wordsCollection).WriteDictionary();
             Close();
+
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
 
         }
     }
